@@ -1,0 +1,26 @@
+
+#include<stdio.h>
+void main()
+{
+    int i=1,n;
+    float s=0.0;
+    printf("Name=Vikash Kumar Maurya\n");
+    printf("Roll=24SCSE2030513\n");
+    printf("Input the number terms : ");
+    scanf("%d",&n);
+    while (i<=n)
+    {
+        if(i<n){
+           printf("1/%d +",1);
+           s += 1/ (float)i; 
+        }
+        if (i==n)
+        {
+            printf("1/%d",1);
+            s+=1/(float)i;
+        }
+        i++;
+    }
+    printf("\n sum of serise upto %d terms : %f \n",n,s);
+}
+
