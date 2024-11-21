@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+// Function to calculate the product of digits of a number
+int productOfDigits(int n) {
+    int product = 1;
+    while (n > 0) {
+        product *= n % 10; // Multiply the last digit
+        n /= 10;           // Remove the last digit
+    }
+    return product;
+}
+
+// Function to calculate multiplicative persistence
+int multiplicativePersistence(int n) {
+    int steps = 0;
+    while (n >= 10) { // Continue until the number is a single digit
+        n = productOfDigits(n);
+        steps++;
+    }
+    return steps;
+}
+
+int main() {
+    int num;
+    
+    // Get input from the user
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Please enter a non-negative number.\n");
+        return 1;
+    }
+
+    // Calculate and display the multiplicative persistence
+    int result = multiplicativePersistence(num);
+    printf("The multiplicative persistence of %d is: %d\n", num, result);
+
+    return 0;
+}
